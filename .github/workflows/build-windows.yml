@@ -1,0 +1,22 @@
+name: Build Windows PHP Extension
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Build Tensor extension
+        uses: php/php-windows-builder/extension@v1
+        with:
+          extension-url: https://github.com/RubixML/Tensor
+          extension-ref: master
+          php-version: '8.5'
+          arch: x64
+          ts: ts
+          run-tests: false
