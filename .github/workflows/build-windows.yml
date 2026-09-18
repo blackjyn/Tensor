@@ -8,14 +8,11 @@ jobs:
     runs-on: windows-2022
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
       - name: Build Tensor extension
         uses: php/php-windows-builder/extension@v1
         with:
-          extension-url: https://github.com/RubixML/Tensor
-          extension-ref: master
+          extension-url: https://github.com/blackjyn/Tensor
+          extension-ref: 07751543fa01a1889bd3fe73661b6ee87a2732f0
           php-version: '8.5'
           arch: x64
           ts: ts
